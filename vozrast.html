@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script>
+        function checkAge() {
+            var elem = document.getElementById('icbox');
+            var age = elem.value;
+            if (age > 13) {
+                return true;
+            } else {
+                alert('вход запрещён. Вам меньше 13 лет ');
+                return false;
+            }
+        }
+    </script>
+    <p>для входа введите ваш возраст</p>
+    <p><input id="icbox" type="number"></p>
+    <p><a href="https://grigorijtesko.github.io/" onclick="return checkAge();">сайт</a></p>
+
+
+</body>
+
+</html>
