@@ -1,10 +1,10 @@
 .bord{
-    width: 400px;
+    width: 800px;
     height: 300 px;
     border: 1px solid #000;
 }
 .game{
-    width: 400px;
+    width: 800px;
     height: 200px;
     border-bottom: 1px solid #000;
 }
@@ -21,44 +21,58 @@
 }
 
 #cactus {
-    width: 50px;
-    height: 50px;
-    background-image: url(3cactus.png);
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
-    top: 110px;
+    top: 100px;
     padding-left: 1px ;
-    animation: cactusMov 1.3s infinite linear;
+    animation: cactusMov 3.0s infinite linear;
+}
+
+.cactus1 {
+    width: 50px;
+    height: 50px;
+    background-image: url(1cactus.png);
+}
+
+.cactus2 {
+    width: 100px;
+    height: 50px;
+    background-image: url(2cactus.png);
+}
+.cactus3 {
+    width: 150px;
+    height: 50px;
+    background-image: url(3cactus.png);
 }
 
 @keyframes cactusMov{ 
        0%{
-left: 340px;
+left: 800px;
     }
     100%
 {
-    left: -340px;
+    left: -680px;
 }
 }
 
 
 .jump{
-animation: jump 0.3s linear;
+animation: jump 0.5s linear;
 }
 
 @keyframes jump {
     0%{
         top:150px;      
     }
-    30%{
-        top: 130px;
+    25%{
+        top: 100px;
     }
     50%{
         top: 80px;
     }
-    80%{
-       top: 130px;
+    75%{
+       top: 90px;
     }
     100% {
         top:150px;
