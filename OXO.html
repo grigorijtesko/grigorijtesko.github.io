@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Крестики-нолики
+    </title>
+    <style>
+        .row div {
+            padding: 10px;
+            border: 1px solid black;
+            height: 30px;
+            width: 30px;
+            float: left;
+        }
+
+        .row {
+            clear: both;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    Щёлкни, чтобы сыграть в крестики-нолики
+    <div>
+        <div class="row">
+            <div id="0_0" onclick="place(this)"></div>
+            <div id="1_0" onclick="place(this)"></div>
+            <div id="2_0" onclick="place(this)"></div>
+        </div>
+        <div class="row">
+            <div id="0_1" onclick="place(this)"></div>
+            <div id="1_1" onclick="place(this)"></div>
+            <div id="2_1" onclick="place(this)"></div>
+        </div>
+        <div class="row">
+            <div id="0_2" onclick="place(this)"></div>
+            <div id="1_2" onclick="place(this)"></div>
+            <div id="2_2" onclick="place(this)"></div>
+        </div>
+    </div>
+    <script>
+        var currentPlayer = 'X';
+        function place(box) {
+            if (box.innerText != '') {
+                return;
+            }
+            box.innerText = currentPlayer;
+            currentPlayer == 'X' ? currentPlayer = 'O' : currentPlayer = 'X';
+            checkGameBoard();
+
+        }
+        function checkGameBoard() {
+            for (var i = 0; i <= 2; i++) {
+                var first = document.getElementById('0_' + i).innerText;
+                var second = document.getElementById('1_' + i).innerText;
+                var third = document.getElementById('2_' + i).innerText;
+                if (first == '') {
+                    continue;
+                }
+                if (first == second && first == third) {
+                    alert('победитель');
+                }
+
+            }
+            for (var i = 0; i <= 2; i++) {
+                var first = document.getElementById(i + '_0').innerText;
+                var second = document.getElementById(i + '_1').innerText;
+                var third = document.getElementById(i + '_2').innerText;
+                if (first == '') {
+                    continue;
+                }
+                if (first !== '' && first == third && first == third) {
+                    alert('победитель');
+                }
+
+            }
+            var first = document.getElementById('0_0').innerText;
+            var second = document.getElementById( '1_1').innerText;
+            var third = document.getElementById( '2_2').innerText;
+            if (first != '' && first == second && first == third) {
+                alert('победитель');
+            }
+            var first = document.getElementById('2_0').innerText;
+            var second = document.getElementById( '1_1').innerText;
+            var third = document.getElementById( '0_2').innerText;
+            if (first != '' && first == second && first == third) {
+                alert('победитель');
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
